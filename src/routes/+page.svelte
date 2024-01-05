@@ -1,9 +1,14 @@
 <script>
     // Nested components
     import Nested from "./Nested.svelte";
+	import { countStore } from "$lib/store";
 
     // variable
     let name = "Amine Elkhalidy";
+	let count_value;
+
+	// subscribe to the store...
+	countStore.subscribe((value) => count_value = value)
 
     // HTML tags
     let string = `this string contains some <strong>HTML!!!</strong>`;
